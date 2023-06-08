@@ -29,4 +29,10 @@ jobs:
     steps:
       - name: another echo
         run: echo "another line"
+  depending-job:
+    needs: [reusable-job,another-job]
+    runs-on: ubuntu-latest
+    steps:
+      - name: another echo
+        run: echo "another line"
   
